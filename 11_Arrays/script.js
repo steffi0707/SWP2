@@ -27,7 +27,11 @@ console.log(mittelwert);
 //Aufgabe 2
 let arrays = ["Susi", "Paula", "Hans"];
 
-for (let index = 0; index < array.length; index++) {
-    if ()
-    
+let output = "";
+for (let index = 0; index < arrays.length; index++) {
+    output += arrays[index];
+    if (index%1 == 0) {
+        output += ", ";
+    }
 }
+console.log(output);
