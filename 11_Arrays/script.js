@@ -33,5 +33,5 @@ for (let index = 0; index < arrays.length; index++) {
     if (index%1 == 0) {
         output += ", ";
     }
-}
+};
 console.log(output);
