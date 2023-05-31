@@ -26,12 +26,20 @@ console.log(mittelwert);
 
 //Aufgabe 2
 let arrays = ["Susi", "Paula", "Hans"];
-
+arrays.push('Sepp');
 let output = "";
 for (let index = 0; index < arrays.length; index++) {
     output += arrays[index];
-    if (index%1 == 0) {
+    if ( (index < arrays.length - 2)) {
         output += ", ";
     }
-};
-console.log(output);
+
+    if (index == arrays.length - 2){
+        output += " und ";
+    }
+
+}
+
+
+
+console.log("Meine Freunde sind " + output);
