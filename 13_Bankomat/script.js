@@ -6,7 +6,7 @@ const readline = createInterface({
 });
 
 const readLineAsync = () => {
-  return new Promise((resolve) => {   
+  return new Promise((resolve) => {
     readline.question("", (userRes) => {
       resolve(userRes);
       //readline.close();
@@ -14,30 +14,37 @@ const readLineAsync = () => {
   });
 };
 
-let selection = readLineAsync();
+let balance = 0;
+let isFinished = false;
 
-console.log("1. Einzahlen");
-console.log("2. Abheben");
-console.log("3. Kontostand");
-console.log("4. Beenden");
+while (!isFinished) {
+  console.log("1. Einzahlen");
+  console.log("2. Abheben");
+  console.log("3. Kontostand");
+  console.log("4. Beenden");
 
-console.log("Wähle eine Eingabe");
-let inputOfUser = await readLineAsync();
-console.log("Your name is " + inputOfUser);
+  console.log("Wähle eine Eingabe");
+  let selection = await readLineAsync();
+  console.log(selection);
 
-if (selection == 1) {
+  if (selection == 1) {
     console.log("Geben sie den Betrag ein dein Sie einzahlen möchten:");
-}
+    let selection = await readLineAsync();
+    balance += parseFloat(selection);
+    
+  }
 
-if (selection == 2) {
+  if (selection == 2) {
     console.log("Geben sie den Betrag ein den Sie Abheben möchten:");
-}
+  }
 
-if (selection == 3) {
-    System.out.println("Der Kontostand beträgt:" + balance);  
-}
+  if (selection == 3) {
+    console.log("Der Kontostand beträgt:" + balance);
+  }
 
-if (selection == 4) {
+  if (selection == 4) {
     isFinished = true;
-    System.out.println("Machine is stopping!");
+    console.log("Machine is stopping!");
+  }
 }
+readline.close();
