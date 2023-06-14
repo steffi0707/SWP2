@@ -36,6 +36,8 @@ while (!isFinished) {
 
   if (selection == 2) {
     console.log("Geben sie den Betrag ein den Sie Abheben möchten:");
+    let selection = await readLineAsync();
+    balance -= parseFloat(selection);
   }
 
   if (selection == 3) {
