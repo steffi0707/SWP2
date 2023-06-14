@@ -1,8 +1,28 @@
+import { createInterface } from "readline";
+
+const readline = createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+const readLineAsync = () => {
+  return new Promise((resolve) => {   
+    readline.question("", (userRes) => {
+      resolve(userRes);
+      //readline.close();
+    });
+  });
+};
+
+console.log("Enter your name");
+let inputOfUser = await readLineAsync();
+console.log("Your name is " + inputOfUser);
+
+
 console.log("1. Einzahlen");
 console.log("2. Abheben");
 console.log("3. Kontostand");
-console.log("4. Ende");
-
+console.log("4. Beenden");
 
 
 
@@ -11,7 +31,7 @@ if (selection == 1) {
 }
 
 if (selection == 2) {
-    console.log("");
+    console.log("Geben sie den Betrag ein den Sie Abheben möchten:");
 }
 
 if (selection == 3) {
