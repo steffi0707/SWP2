@@ -14,17 +14,16 @@ const readLineAsync = () => {
   });
 };
 
-console.log("Enter your name");
-let inputOfUser = await readLineAsync();
-console.log("Your name is " + inputOfUser);
-
+let selection = readLineAsync();
 
 console.log("1. Einzahlen");
 console.log("2. Abheben");
 console.log("3. Kontostand");
 console.log("4. Beenden");
 
-
+console.log("Wähle eine Eingabe");
+let inputOfUser = await readLineAsync();
+console.log("Your name is " + inputOfUser);
 
 if (selection == 1) {
     console.log("Geben sie den Betrag ein dein Sie einzahlen möchten:");
